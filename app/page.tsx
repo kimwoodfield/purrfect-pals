@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { getPetOwners } from "../utils/getPetOwners";
 import Header from "@/components/Header";
-import CatGroupContainer from "@/components/CatGroupContainer";
 import Spinner from "@/components/Spinner";
+import CatGroupContainer from "@/components/CatGroupContainer";
 import { getCatsByOwnersGender } from "@/utils/getCatsByOwnersGender";
 import { Gender, PetOwner } from "./types/types";
 
@@ -41,4 +41,3 @@ export default function Home() {
     </main>
   );
 }
-

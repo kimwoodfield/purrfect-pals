@@ -8,12 +8,13 @@ export const getCatsByOwnersGender = (owners: PetOwner[], gender: Gender) => {
       };
     }
     
-    const cats = owners
+    const cats: Pet[] = owners
       .filter((owner: PetOwner) => owner.gender === gender && owner.pets)
       .flatMap( 
         (owner: PetOwner) =>
           owner.pets?.filter((pet: Pet) => pet.type === PetOptions.Cat) ?? []
-      );
+      )
+      .sort((a, b) => (a.name > b.name ? 1 : -1));
   
     return {
       gender,
